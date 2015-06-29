@@ -1,0 +1,106 @@
+<html>
+<head>
+  <title>ROSEdu</title>
+  <style>
+    #titlu {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="titlu">ROSEdu OSSS</h1>
+  <p>Awesome summer!</p>
+  <ol id="list1">
+    <li>Linus Torvalds</li>
+    <li>Steve Jobs</li>
+    <li>Bill Gates</li>
+  </ol>
+  <ol id="list2">
+    <li>Linux</li>
+    <li>Apple</li>
+    <li>Facebook</li>
+  </ol>
+  <input type="text" id="myInput" />
+  <button id="butonulMeu">Click me!</button>
+
+  <script>
+    // console.log('sunt aici');
+
+    // Hide la buton cand fac click
+   // var buton = document.getElementById("butonulMeu");
+   // buton.onclick = function() {
+      // console.log("am dat click");
+    //  ascundeButon()
+   // }
+
+    var ascundeButon = function() {
+      var titlu = document.getElementById("titlu");
+      if (titlu.style.display == "block")
+        titlu.style.display = "none";
+      else
+        titlu.style.display = "block";
+    }
+
+    // console.log(buton)
+
+    // Genereaza doua liste din 2 arrayuri
+    var list1 = ["LT", "BG", "MZ"];
+    var list2 = ["A", "B", "C"];
+
+    myList1 = document.getElementById("list1");
+    for (var i=0; i<list1.length; i++) {
+      var myLI1 = document.createElement('li');
+      var myText = document.createTextNode(list1[i]);
+      myLI1.appendChild(myText);
+      myList1.appendChild(myLI1)
+    }
+    
+    // ex 0
+    var myList2 = document.getElementById("list2");
+    for (var i = 0;i < list2.length;i ++) {
+        var myLI2 = document.createElement('li');
+        var myText = document.createTextNode(list2[i]);
+        myLI2.appendChild(myText);
+        myList2.appendChild(myLI2);
+    }
+    
+    // ex 1
+    var buton = document.getElementById("butonulMeu");
+    buton.onclick = function() {
+      //ascundeButon()
+        input = document.getElementById("myInput");
+        document.getElementById("titlu").innerHTML = input.value;
+    }
+    
+    // ex 2
+    var moveToL1;
+    var moveToL2 = function(event) {
+    console.log("alex")
+        var element = event.target
+        myList2.appendChild(element);
+        element.onclick = moveToL1;
+        return false;
+    }
+    moveToL1 = function(event) {
+        var element = event.target
+        myList1.appendChild(element);
+        element.onclick = moveToL2;
+        return false;
+    }
+    
+    for(var i = 0;i < myList1.children.length;i ++)
+        myList1.children[i].onclick = moveToL2;
+    for(var i = 0;i < myList2.children.length;i ++)
+        myList2.children[i].onclick = moveToL1;
+    
+    
+    
+    // Exercitii
+    // 2. cand dau click pe un element scoate-l si adauga-l in partea cealalta
+    //    - pune handler pe toate li-urile
+    //    - x = removeNode din event.currentTarget
+    //    - vezi clasa la parentNode
+    //    - adauga cu getElementById in cealalta lista
+  </script>
+</body>
+</html>
