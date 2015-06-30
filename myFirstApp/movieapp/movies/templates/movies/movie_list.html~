@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>My super movie rater App</title>
+	</head>
+	<body>
+		<div>
+			<h1><a href="/">My super movie rater App</a></h1>
+		</div>
+
+		{% for movie in movies %}
+			<div>
+				<h1><a href="">{{ movie.title }}</a></h1>
+				<p>{{ post.description|linebreaks }}</p>
+				<p>release date: {{ movie.release_date}}</p>
+				<p>rating : {{ movie.average }}</p>
+			</div>
+		{% endfor %}
+
+	</body>
+</html>

@@ -1,0 +1,47 @@
+from django.db import models
+from django.contrib.auth.models import User
+from django.utils import timezone
+
+	
+
+class Movie(models.Model):
+	# author = models.ForeignKey(User)
+	# image_url = models.URLField(null=True, blank=True)
+	# trailer = models.CharField(max_length=200)
+	title = models.CharField(max_length=200)
+	description = models.TextField()
+	release_date = models.DateField()
+	nr_votes = models.IntegerField(default=0)
+	votes_sum = models.IntegerField(default=0)
+	average = models.FloatField(default=0)
+	
+	def __str__(self):
+		return self.title
+		
+		
+
+class Rate(models.Model):
+	user = models.ForeignKey(User)
+	name = models.ForeignKey(Movie)
+	rate = models.IntegerField()
+	created_at = models.DateTimeField(default=timezone.now)
+		
+	def __str__(self):
+		#return 'Vote %d to %s by %s' % (self.rate, self.name, self.user)
+		return self.rate
+
+
+
+class Score(models.Model):
+	vote = models.ForeignKey(Rate)    
+	
+	def calculate_score(self):
+		self.vote.name.votes_sum += self.vote.rate
+		self.vote.name.nr_votes += 1
+		self.vote.name.average = self.vote.name.votes_sum / self.vote.name.nr_votes
+		self.save()
+		
+	def __str__(self):
+		return 'Rate %d to %s' % (self.vote.rate, self.vote.name.title)
+		
+		
