@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Prima mea pagina html</title>
+    
+    <style>
+    * {
+    border: solid 1px red;
+    }
+    h1 {
+        background: orange;
+        }
+</style>
+</head>
+
+<body bgcolor = "black" text = "white"  >
+    <h1>Program OSSS </h1>
+    <table>
+        <tbody>
+        <tr>
+            <td>Data</td>
+            <td>Ora</td>
+            <td>Prezentare</td>
+            <td>Vreau sa fiu prezentator</td>
+            <td>Vreau sa fiu asistent</td>
+        </tr>
+        <tr>
+            <td>22/06/2015</td>
+            <td>10:00 - 13:00</td>
+            <td>Jocuri de cunoastere</td>
+            <td>Laura Antonache</td>
+            <td>Ioan Eugen Stan</td>
+        </tr>
+        <tr>
+            <td>23/06/2015</td><td>10:00 - 13:00</td><td>Open Source Collaborative Tools: Communication, Wikis, IssueTracking, License</td>	RăzvanD</td>
+            <td></td>
+        </tr>
+        
+        </tbody>
+    </table>
+    <p font size="500">Worst day</p>
+</body>
+
+</html>

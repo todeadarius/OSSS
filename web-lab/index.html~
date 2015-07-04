@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Prima mea pagina html</title>
+</head>
+
+<style>
+    * {
+    border: solid 1px red
+    }
+</style>
+
+<body>
+    <p>http://todeadarius.github.io/web-lab/</p>
+    <p>Prima mea pagina HTML</p>
+    <p>Hello</p>
+    
+    <h1>Titlu mare</h1>
+    <h2>Titlu mare</h2>
+    
+    <div>
+        Acesta este un el. de tip bloc
+    </div>
+    
+    <p>Un text oarecare <span>care se continua</span> cu alt text</p> 
+</body>
+
+</html>
